@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block controls %}
+	{% if user %}
+	<a class="gray-link" href="/blog/newpost">new post</a>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% for p in posts %}
+    {{ p.render() | safe }}
+    <br><br>
+  {% endfor %}
+
+{% endblock %}
